@@ -23,5 +23,6 @@ def evaluate(dataset, predictions, output_folder, **kwargs):
     elif isinstance(dataset, datasets.PascalVOCDataset):
         return voc_evaluation(**args)
     else:
+        return voc_evaluation(**args)
         dataset_name = dataset.__class__.__name__
         raise NotImplementedError("Unsupported dataset type {}.".format(dataset_name))
